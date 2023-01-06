@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="RentaContenedores.Views.Contenedores.VerContenedoresView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RentaContenedores.Views.Contenedores"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <UniformGrid DockPanel.Dock="Top" Columns="3">
+            <TextBlock>Número</TextBlock>
+            <TextBlock>Pasillo</TextBlock>
+            <TextBlock>Dimensiones</TextBlock>
+        </UniformGrid>
+        <ListView ItemsSource="{Binding Contenedores}" HorizontalContentAlignment="Stretch" >
+        
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                        
+                    <UniformGrid Columns="3" >
+                        <TextBox Text="{Binding Numero}"/>
+                        <TextBox Text="{Binding Pasillo}"/>
+                        <TextBox Text="{Binding Dimensiones}"/>
+                    </UniformGrid>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </DockPanel>
+</UserControl>
